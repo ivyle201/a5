@@ -1,0 +1,292 @@
+Consider the clusters of size >=3 you extracted previously for both retweets and replies.
+
+For each cluster, compute the relative frequencies of all hashtags you found for that cluster.
+
+Your relative_frequency_H_C for a hashtag H in cluster C is:
+
+   relative_frequency_H_C = frequency_H_in_C / frequency_H_overall. 
+
+Where:
+
+   frequency_H_in_C = count_H_in_C / count_hashtags_in_C . (if you prefer you can use count_tweets_in_C in the denominator).
+
+   frequency_H_overall = count_H_entire_dataset / count_hashtags_entire_dataset . (if you prefer you can use count_tweets_entire_dataset in the denominator).
+
+If you are not familiar with relative frequencies, they are used here to see which hashtags are special for particular clusters, i.e. hashtags that appear often in a cluster of tweets but less often over all tweets. You could have also used p-values, but they are more complicated to compute.
+
+List all hashtags with their relative frequencies for the clusters of size >=3. List them in a table of columns shown below, tab-separated:
+
+hashtag_H   cluster_C_leader(userID)   relative_frequency_H_C  frequency_H_in_C  frequency_H_overall   count_H_in_C   count_hashtags_in_C   count_H_entire_dataset    count_hashtags_entire_dataset
+ 
+
+Create two tables in files named retweets_hashtag_freqs.tsv and replies_hashtag_freqs.tsv (for retweets and replies, tab-separated).
+
+
+
+# get authors that got 3 or more replies
+grep "type=replied_to" downloaded_tweets_extend_original_nolf2_NOBOT.tsv | awk -F "\t" ' {print $6}' | sort | uniq -c | sort -nr | awk '{if ($1>=3)
+ print $2}' > INFL_UserIDs_3Rgreater_replies.tsv
+[vivian@sjsu A5]$ head INFL_UserIDs_3Rgreater_replies.tsv
+3453306553
+29447428
+1238370241169616897
+1108565574
+19739126
+21525682
+95091601
+48624704
+1462548977367359490
+26217297
+
+# get all hashtags for replies
+
+[vivian@sjsu A5]$ grep "type=replied_to" downloaded_tweets_extend_original_nolf2_NOBOT.tsv | cut -f4 | tr ',' '\n' | tr '"' '\n'| tr '[:upper:]' '[:lower:]' | grep . > entire_hashtags_for_replies.tsv
+[vivian@sjsu A5]$ head entire_hashtags_for_replies.tsv
+authoritarianism
+ft
+borisjohnson
+melanieshaw
+melanieshaw
+nhs
+brexit
+auspol
+usaorinc
+julian
+
+# get hashtags for replies for authors that got 3 or more replies
+
+[vivian@sjsu A5]$ grep "type=replied_to" downloaded_tweets_extend_original_nolf2_NOBOT.tsv > original_replies.tsv
+[vivian@sjsu A5]$ fgrep -f INFL_UserIDs_3Rgreater_replies.tsv original_replies.tsv |  cut -f 4 | tr ',' '\n' | tr '"' '\n'| tr '[:upper:]' '[:lower:]' | grep . > all_hashtags_INFL_UserIDs_3Rgreater_replies.tsv
+[vivian@sjsu A5]$ head all_hashtags_INFL_UserIDs_3Rgreater_replies.tsv
+nhs
+brexit
+thankyoujoe
+thankyoujoe
+thankyoujoe
+lisashaw
+vitt
+iot
+helium
+hotspot
+[vivian@sjsu A5]$ wc -l all_hashtags_INFL_UserIDs_3Rgreater_replies.tsv 
+1186 all_hashtags_INFL_UserIDs_3Rgreater_replies.tsv
+[vivian@sjsu A5]$ wc -l INFL_UserIDs_3Rgreater_replies.tsv 
+112 INFL_UserIDs_3Rgreater_replies.tsv
+[vivian@sjsu A5]$ wc -l entire_hashtags_for_replies.tsv 
+3925 entire_hashtags_for_replies.tsv
+[vivian@sjsu A5]$ 
+
+
+
+# get retweet reference IDs and sort
+[vivian@sjsu A5]$ grep "type=retweeted" downloaded_tweets_extend_nolf2_NOBOT.tsv | cut -f5 | sed -r 's/\[<ReferencedTweet id=([0-9]+) type=retweeted\]/\1/' > all_reference_IDs_retweets.tsv
+[vivian@sjsu A5]$ sort all_reference_IDs_retweets.tsv > sorted_all_reference_IDs_retweets.tsv
+[vivian@sjsu A5]$ wc -l sorted_all_reference_IDs_retweets.tsv
+48954 sorted_all_reference_IDs_retweets.tsv
+[vivian@sjsu A5]$ head sorted_all_reference_IDs_retweets.tsv
+
+1004656199885836288
+1017456403961835520
+1023111834587607041
+1026437890731999232
+1026716985143508992
+1027189486466330624
+1036740863551053824
+1039512558946811904
+1040192907855187968
+[vivian@sjsu A5]$ 
+
+
+# sort downloaded_tweets_extend_original_nolf2_NOBOT.tsv 
+[vivian@sjsu A5]$ sort downloaded_tweets_extend_original_nolf2_NOBOT.tsv > sorted_downloaded_tweets_extend_original_nolf2_NOBOT.tsv
+[vivian@sjsu A5]$ head sorted_downloaded_tweets_extend_original_nolf2_NOBOT.tsv
+1004656199885836288     457060718       2018-06-07 09:27:58+00:00       Brexit                          David Davis is ex SAS He’s trained to survive. He’s also trained to take people out. #Brexit
+1017456403961835520     140496030       2018-07-12 17:11:24+00:00       "Trump,KGB,Helsinki2018"                                "💣💥 💥⚡ #Trump's Early Russian Connections: 30 years of the #KGB surveillance. Facts, links, interviews. #Helsinki2018 @WendySiegelman @dcpoll @peterjukes @lukeharding1968 @ushadrons @AlexandraChalup @Vladdich @grantstern @patrickLSimpson @brexit_sham https://t.co/xqkBXT4QvH"
+1023111834587607041     202615056       2018-07-28 07:44:04+00:00       "MelanieShaw,FreeMelanieShaw"                           Who's terrified of #MelanieShaw ?  #FreeMelanieShaw https://t.co/aQvBXtxAqP
+1026437890731999232     202615056       2018-08-06 12:00:38+00:00       "FreeMelanieShaw,MelanieShaw"                           . We all want the elite paedos brought to justice.. They are running scared.  She can bring them down. All eyes on court tomorrow .. She needs witnesses. THEY need to know we are watching...  #FreeMelanieShaw #MelanieShaw https://t.co/cfkJ2sbuTf
+1026716985143508992     288417339       2018-08-07 06:29:39+00:00       "MelanieShaw,Nottingham"                                Melanie Shaw in Court 5 at 10.30am Leeds Crown Court Today... #MelanieShaw  #Nottingham https://t.co/hBBq1nipSj
+1027189486466330624     80797203        2018-08-08 13:47:12+00:00       melanieshaw                             Update from #melanieshaw solicitor https://t.co/3l5sCnHi1z
+1036740863551053824     1223514530      2018-09-03 22:20:58+00:00       "LaborOnLaborDay,TrySocialism,SeizeTheMeans"                            "Capital is dead labor, which, vampire-like, lives only by sucking living labor, and lives the more, the more labor it sucks. ~ Karl Marx  #LaborOnLaborDay #TrySocialism #SeizeTheMeans"
+1039512558946811904     74468291        2018-09-11 13:54:41+00:00       "melanieshaw,Southend"                          Melanie Shaw is being held because she knows the truth There’s posters in Southend hot spots  Will you read them of ignore them #melanieshaw #Southend https://t.co/hyXhUXdz9V
+1040192907855187968     741190491195248642      2018-09-13 10:58:09+00:00       "MelanieShaw,Windrush"  [<ReferencedTweet id=1039898976076611585 type=quoted]                   You’re tackling injustice??  Where are the paedo files you lost and where the AAAAAA is #MelanieShaw ?? You’re tackling racism?? One word. #Windrush You are failing miserably with EU divorce and you plunge more kids into poverty as you claim expenses. AAAAAA Off @theresa_may https://t.co/5rR4VOr9tx
+1040337381356974081     126646669       2018-09-13 20:32:14+00:00       MelanieShaw     [<ReferencedTweet id=1040336819039035394 type=quoted]                   All good as the dog and pony show continues. Controlled opposition is great when the slave masters control both sides eh? Look deeper people? -&gt; (remember #MelanieShaw ) https://t.co/KM8oNcs2yR
+[vivian@sjsu A5]$ 
+
+# join retweet IDs with original file, keep only author and hashtags columns
+
+[vivian@sjsu A5]$ join -t $'\t' -1 1 -2 1 -o2.2,2.4 sorted_all_reference_IDs_retweets.tsv sorted_downloaded_tweets_extend_original_nolf2_NOBOT.tsv > retweets_all_userIDs_and_hashtags_after_join_RefIDs_wOriginal.tsv
+[vivian@sjsu A5]$ head retweets_all_userIDs_and_hashtags_after_join_RefIDs_wOriginal.tsv
+457060718       Brexit
+140496030       "Trump,KGB,Helsinki2018"
+202615056       "MelanieShaw,FreeMelanieShaw"
+202615056       "FreeMelanieShaw,MelanieShaw"
+288417339       "MelanieShaw,Nottingham"
+80797203        melanieshaw
+1223514530      "LaborOnLaborDay,TrySocialism,SeizeTheMeans"
+74468291        "melanieshaw,Southend"
+741190491195248642      "MelanieShaw,Windrush"
+126646669       MelanieShaw
+[vivian@sjsu A5]$ wc -l retweets_all_userIDs_and_hashtags_after_join_RefIDs_wOriginal.tsv
+45796 retweets_all_userIDs_and_hashtags_after_join_RefIDs_wOriginal.tsv
+[vivian@sjsu A5]$ 
+
+
+# get all hashtags for retweeted messages
+
+[vivian@sjsu A5]$ cut -f2 retweets_all_userIDs_and_hashtags_after_join_RefIDs_wOriginal.tsv | tr ',' '\n' | tr '"' '\n'| tr '[:upper:]' '[:lower:]' | grep . > entire_hashtags_for_retweets.tsv
+[vivian@sjsu A5]$ wc -l entire_hashtags_for_retweets.tsv
+88498 entire_hashtags_for_retweets.tsv
+[vivian@sjsu A5]$ head entire_hashtags_for_retweets.tsv
+brexit
+trump
+kgb
+helsinki2018
+melanieshaw
+freemelanieshaw
+freemelanieshaw
+melanieshaw
+melanieshaw
+nottingham
+[vivian@sjsu A5]$ 
+
+
+# get authors that were retweeted  3 or more times
+[vivian@sjsu A5]$ cut -f1 retweets_all_userIDs_and_hashtags_after_join_RefIDs_wOriginal.tsv | sort | uniq -c | sort -nr | awk '{if ($1>=3) print $0}' | head -n 10
+    755 18831926
+    425 1891490382
+    360 163018653
+    323 1495480590572961792
+    315 1219232377605644289
+    255 1231514832479948802
+    192 42836999
+    179 80802900
+    179 1229752606714728454
+    160 720139699
+[vivian@sjsu A5]$ 
+[vivian@sjsu A5]$ cut -f1 retweets_all_userIDs_and_hashtags_after_join_RefIDs_wOriginal.tsv | sort | uniq -c | sort -nr | awk '{if ($1>=3) print $2}' > INFL_UserIDs_3Rgreater_retweets.tsv
+[vivian@sjsu A5]$ wc -l INFL_UserIDs_3Rgreater_retweets.tsv
+2999 INFL_UserIDs_3Rgreater_retweets.tsv
+[vivian@sjsu A5]$ head INFL_UserIDs_3Rgreater_retweets.tsv
+18831926
+1891490382
+163018653
+1495480590572961792
+1219232377605644289
+1231514832479948802
+42836999
+80802900
+1229752606714728454
+720139699
+[vivian@sjsu A5]$ 
+
+
+
+# get all hashtags for authors retweeted 3 or more times
+[vivian@sjsu A5]$ 
+[vivian@sjsu A5]$ fgrep -f INFL_UserIDs_3Rgreater_retweets.tsv retweets_all_userIDs_and_hashtags_after_join_RefIDs_wOriginal.tsv | awk '{print $2}' | head
+"Trump,KGB,Helsinki2018"
+"Nonverbal,EmotionalIntelligence,DonaldTrump,BrettKavanuagh,AnthonyKennedy,BodyLanguage,BodyLanguageExpert,SCOTUS,TakenAback,StoppedInHIsTracks"
+"WayV,WeiShenV,威神V,TEN,李永钦"
+"Russia,MuellerReport"
+"winning,pesto,London,photographer,video"
+"Dementia,Fraud,elderly"
+Halloween19
+Brexit
+"IStandWithMaya,ThisIsNotADrill"
+"RRRRRRange,WikiLeaks,FreeRRRRRRange,Unity4J,Auspol"
+[vivian@sjsu A5]$ 
+
+
+[vivian@sjsu A5]$ fgrep -f INFL_UserIDs_3Rgreater_retweets.tsv retweets_all_userIDs_and_hashtags_after_join_RefIDs_wOriginal.tsv | awk '{print $2}' | tr ',' '\n' | tr '"' '\n'| tr '[:upper:]' '[:lower:]' | grep . > all_hashtags_INFL_UserIDs_3Rgreater_retweets.tsv
+[vivian@sjsu A5]$ wc -l all_hashtags_INFL_UserIDs_3Rgreater_retweets.tsv
+59078 all_hashtags_INFL_UserIDs_3Rgreater_retweets.tsv
+[vivian@sjsu A5]$ head all_hashtags_INFL_UserIDs_3Rgreater_retweets.tsv
+trump
+kgb
+helsinki2018
+nonverbal
+emotionalintelligence
+donaldtrump
+brettkavanuagh
+anthonykennedy
+bodylanguage
+bodylanguageexpert
+[vivian@sjsu A5]$ 
+
+
+# get all hashtags for original file
+[vivian@sjsu A5]$ cut -f4 downloaded_tweets_extend_original_nolf2_NOBOT.tsv | tr ',' '\n' | tr '"' '\n'| tr '[:upper:]' '[:lower:]' | grep . > entire_hashtags_dataset_of_downloaded_tweets_extend_original_nolf2_NOBOT.tsv
+[vivian@sjsu A5]$ wc -l entire_hashtags_dataset_of_downloaded_tweets_extend_original_nolf2_NOBOT.tsv
+81028 entire_hashtags_dataset_of_downloaded_tweets_extend_original_nolf2_NOBOT.tsv
+[vivian@sjsu A5]$ head entire_hashtags_dataset_of_downloaded_tweets_extend_original_nolf2_NOBOT.tsv
+hashtags
+brexit
+trump
+kgb
+helsinki2018
+melanieshaw
+freemelanieshaw
+freemelanieshaw
+melanieshaw
+melanieshaw
+[vivian@sjsu A5]$ 
+[a5-8] 0:bash*      
+
+
+# create script to create cluster files
+
+
+[vivian@sjsu A5]$ vi create_clusters.sh 
+[vivian@sjsu A5]$ cat create_clusters.sh 
+#!/bin/bash
+
+echo -n "Creating clusters. Please enter for 1 'replies' or  2 for 'retweets': "
+
+read value
+
+if [ "$value" -eq 1 ] ;
+then 
+
+	file="INFL_UserIDs_3Rgreater_replies.tsv"
+	INFLUENCE_CLUSTER="INFLUENCE_CLUSTERS_REPLIES"
+
+elif [ "$value" -eq 2 ] ;
+then
+        file="INFL_UserIDs_3Rgreater_retweets.tsv"
+        INFLUENCE_CLUSTER="INFLUENCE_CLUSTERS_RETWEETS"
+else
+	echo "Wrong number was enter. Please try again."
+	exit 1
+
+fi	
+for userID_of_INFL in `cat $file` ; do
+      		
+	grep  $userID_of_INFL downloaded_tweets_extend_original_nolf2_NOBOT.tsv \
+	| awk -F "\t" '{print $4}' | tr ',' '\n' | tr '"' '\n'| tr '[:upper:]' '[:lower:]' \
+	| grep . > $INFLUENCE_CLUSTER/$userID_of_INFL ;
+done
+[vivian@sjsu A5]$ 
+[vivian@sjsu A5]$ 
+[vivian@sjsu A5]$ 
+[vivian@sjsu A5]$ 
+[vivian@sjsu A5]$ chmod 700 create_clusters.sh 
+[vivian@sjsu A5]$ 
+[vivian@sjsu A5]$ 
+[vivian@sjsu A5]$ ./create_clusters.sh 
+Creating clusters. Please enter for 1 'replies' or  2 for 'retweets': 1
+Creating files in directory: INFLUENCE_CLUSTERS_REPLIES
+[vivian@sjsu A5]$ ./create_clusters.sh 
+Creating clusters. Please enter for 1 'replies' or  2 for 'retweets': 2
+Creating files in directory: INFLUENCE_CLUSTERS_RETWEETS
+
+
+
+
+
+
+Answer at the bottom of a5.txt: do you see any hashtags that are "special" to some clusters, i.e. that occur often in a particular cluster of tweets, but less often in the tweets overall? Which hashtags and for which clusters (ID'ed by their leaders)? For this purpose, you can sort the rows based on relative_frequency_H_C (higher at top and lower at bottom).
+
+
+
+
+
