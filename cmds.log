@@ -1,0 +1,1000 @@
+   26  cd vivian
+   27  ls
+   28  cd
+   29  find -type f -name downloaded_tweets_extend_original_nolf2.tsv
+   30  cp ./A4/downloaded_tweets_extend_original_nolf2.tsv vivian
+   31  cd vivian
+   32  ls
+   33  head downloaded_tweets_extend_original_nolf2.tsv 
+   34  cd vivian
+   35  head downloaded_tweets_extend_nolf2.tsv 
+   36  tmux new-session -t a5
+   37  ls
+   38  cd A3
+   39  ls
+   40  head q1A3_final.tsv
+   41  cat q2A3_fina_soA_ID_uniqc-greater3.tsv
+   42  head A_ID_uniqc-greater3.tsv
+   43  find . -type f -name downloaded_tweets_extend_original_nolf2_NOBOT.tsv
+   44  cp ./downloaded_tweets_extend_original_nolf2_NOBOT.tsv vivian
+   45  cd vivian
+   46  cd 
+   47  cd vivian
+   48  ls
+   49  tmux attach -f a5
+   50  tmux attach -t a5
+   51  cp ../downloaded_tweets_extend_original_nolf2_NOBOT.tsv .
+   52  cp ~/downloaded_tweets_extend_original_nolf2_NOBOT.tsv .
+   53  cd
+   54  ls
+   55  find . -type f -name downloaded_tweets_extend_original_nolf2_NOBOT.tsv
+   56  cp ./A3/downloaded_tweets_extend_original_nolf2_NOBOT.tsv vivian
+   57  cd vivian
+   58  ls
+   59  tmux attach -t a5
+   60  cd vivian
+   61  ls
+   62  ls -ltr
+   63  cd A5
+   64  ls -ltr
+   65  cd ..
+   66  tmux attach -t a5
+   67  cd vivian/a5
+   68  cd vivian
+   69  ls
+   70  cd A5
+   71  ls -ltr
+   72  chmod 700 a5count.sh 
+   73  ./a5count.sh 
+   74  ls
+   75  ls -ltr
+   76  ls INFLUENCE_CLUSTERS/
+   77  ./a5count.sh 
+   78  grep 1005846500583321601 INFLUENCE_CLUSTERS
+   79  cat INFLUENCE_CLUSTERS/1005846500583321601
+   80  grep tuckyorose INFLUENCE_CLUSTERS/1005846500583321601 | wc -l
+   81  ./a5count.sh 
+   82  cat INFLUENCE_CLUSTERS/1005846500583321601 | wc -l
+   83  ./a5count.sh 
+   84  cd vivian
+   85  tmux attach -t a5
+   86  cd vivian/A5
+   87  ls -ltr
+   88  mkdir test_clusters
+   89  ls -ltr
+   90  ./a5.sh replied_to_userID_influencer_3Rgreater.tsv downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv test_clusters
+   91  cut -f4,6 downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv > cutfirst
+   92  ./a5.sh replied_to_userID_influencer_3Rgreater.tsv cutfirst test_clusters
+   93  cat test_clusters/* | wc -l
+   94  cat INFLUENCE_CLUSTERS/* | wc -l
+   95  head -n 5 downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv 
+   96  head -n 2 cutfirst 
+   97  wc -l cutfirst 
+   98  wc -l downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv 
+   99  cut -f5,6 downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv > reference.tsv
+  100  cut -f4,5 downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv > reference.tsv
+  101  ls -ltr
+  102  mkdir test2
+  103  ./a5.sh replied_to_userID_influencer_3Rgreater.tsv reference.tsv test2
+  104  cat test2/* | wc -l
+  105  cd vivian/a5
+  106  cd vivian/A5
+  107  ./a5count.sh
+  108  ls
+  109  head downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv
+  110  ls -ltr
+  111  cat replied_to_userID_influencer_3Rgreater.tsv
+  112  ls -ltr
+  113  wc -l replied_to_userID_influencer_3Rgreater.tsv
+  114  wc -l all_hashtags_for_replied_to.tsv
+  115  grep all_hashtags_for_replied_to.tsv
+  116  cd ..
+  117  find . -type f -name all_hashtags_for_replied_to.tsv
+  118  history | grep all_hashtags_for_replied_to.tsv
+  119  cd A5
+  120  ./a5c
+  121  ./a5count.sh 
+  122  ls -ltr
+  123  wc -l all_hashtags_for_replied_to.tsv
+  124  ./a5count.sh 
+  125  ls -ltr
+  126  vi a5.sh
+  127  head -n 2 downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv 
+  128  grep "replied_to" downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv |         | awk -F "\t" '{print $4}' | tr ',' '\n' | tr '"' '\n'| tr '[:upper:]' '[:lower:]' \
+  129  grep "replied_to" downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv | awk -F "\t" '{print $4}' | tr ',' '\n' | tr '"' '\n'| tr '[:upper:]' '[:lower:]' | grep . | wc -l
+  130  cat a5.sh
+  131  ./a5count.sh 
+  132  head all_hashtags_for_replied_to.tsv 
+  133  ./a5count.sh 
+  134  ls -ltr
+  135  cat *.sh
+  136  cat INFLUENCE_CLUSTERS/* | wc -l
+  137  wc -l all_hashtags_for_replied_to.tsv
+  138  cat a5.sh
+  139  vi a5.sh
+  140  cd vivian/A5
+  141  ls
+  142  cd
+  143  tmux attach -t a5
+  144  cd vivian/A5
+  145  ls
+  146  ls -ltr
+  147  ./a5_count_hashtags.sh
+  148  chmod 700 a5_count_hashtags.sh
+  149  ./a5_count_hashtags.sh
+  150  cd vivian/A5
+  151  ls -ltr
+  152  ./a5_count_hashtags.sh
+  153  grep covid downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv | wc -l
+  154  ./a5count.sh 
+  155  ls
+  156  ls -ltr
+  157  ./a5_count_hashtags.sh
+  158  ls -ltr
+  159  downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv | awk -F "\t" '{print $4}' \
+  160  cut -f4 downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv | tr ',' '\n' | tr '"' '\n'| tr '[:upper:]' '[:lower:]' | grep . | wc -l
+  161  cut -f4 downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv | tr ',' '\n' | tr '"' '\n'| tr '[:upper:]' '[:lower:]' | grep . > hashtags_entire_dataset_downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv
+  162  ./a5_count_hashtags.sh
+  163  grep covid hashtags_entire_dataset_downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv | wc -l
+  164  ./a5_count_hashtags.sh
+  165  ./a5_count_hashtags.sh > replies_hashtag_freqs.tsv
+  166  head replies_hashtag_freqs.tsv
+  167  ./a5_count_hashtags.sh > replies_hashtag_freqs.tsv
+  168  head replies_hashtag_freqs.tsv
+  169  ls -ltr
+  170  rm -rf test*
+  171  ls -ltr
+  172  rm cutfirst
+  173  rm reference.tsv
+  174  ls -ltr
+  175  mv a5count.sh a5_count_draft.sh
+  176  ls -ltr
+  177  ./a5_count_hashtags.sh > replies_hashtag_freqs.tsv
+  178  head replies_hashtag_freqs.tsv
+  179  ./a5_count_hashtags.sh > replies_hashtag_freqs.tsv
+  180  head replies_hashtag_freqs.tsv 
+  181  ./a5_count_hashtags.sh > replies_hashtag_freqs.tsv
+  182  head replies_hashtag_freqs.tsv 
+  183  ./a5_count_hashtags.sh > replies_hashtag_freqs.tsv
+  184  head replies_hashtag_freqs.tsv 
+  185  ls -ltr
+  186  mv a5.sh create_clusters_INFL_userIDs_wHashtags_script.sh
+  187  ls -ltr
+  188  mkdir a5_bak
+  189  mv a5_count_hashtags_bak.sh a5_bak
+  190  ls
+  191  ls -ltr
+  192  mv a5_count_draft.sh a5_bak
+  193  ls -ltr
+  194  cd
+  195  find . -type f -name downloaded_tweets_extend_nolf2_NOBOT
+  196  find /. -type f -name downloaded_tweets_extend_nolf2_NOBOT
+  197  find ./ -type f -name downloaded_tweets_extend_nolf2_NOBOT
+  198  find . -type f -name downloaded_tweets_extend_nolf2_NOBOT.tsv
+  199  cp ./A2/downloaded_tweets_extend_nolf2_NOBOT.tsv vivian/A5
+  200  cd vivian/A5
+  201  ls -ltr
+  202  head downloaded_tweets_extend_nolf2_NOBOT.tsv
+  203  tmux attach -t a5
+  204  cd vivian/A5
+  205  ls -ltr
+  206  vi a5_count_hashtags.sh
+  207  cp a5_count_hashtags.sh a5_count_hashtags_bak.sh
+  208  ls
+  209  ls -ltr
+  210  vi a5_count_hashtags
+  211  vi a5_count_hashtags.sh
+  212  echo "blah\tblah"
+  213  echo -e "blah\tblah"
+  214  ls
+  215  tmux attach -t A%
+  216  tmux attach -t A5
+  217  cd vivian
+  218  tmux attach -t A5
+  219  tmux attach -t a5
+  220  cd vivian
+  221  ls -ltr
+  222  cd A5
+  223  ls -ltr
+  224  for REF_ID in `all_retweeted_reference_IDs.tsv` ; do grep $REF_ID ../downloaded_tweets_extend_original_nolf2_NOBOT.tsv | awk '{print $4}` | head 
+  225  for REF_ID in `all_retweeted_reference_IDs.tsv` ; do grep $REF_ID ../downloaded_tweets_extend_original_nolf2_NOBOT.tsv | awk '{print $4}` | head ; done
+  226  for REF_ID in `all_retweeted_reference_IDs.tsv` ; do grep $REF_ID ../downloaded_tweets_extend_original_nolf2_NOBOT.tsv ; awk '{print $4}` ; done > hashtags_retweeted.tsv
+  227  for REF_ID in `cat all_retweeted_reference_IDs.tsv` ; do grep $REF_ID ../downloaded_tweets_extend_original_nolf2_NOBOT.tsv ; awk '{print $4}` ; done > hashtags_retweeted.tsv
+  228  for REF_ID in `cat all_retweeted_reference_IDs.tsv` ; do grep $REF_ID ../downloaded_tweets_extend_original_nolf2_NOBOT.tsv ; done > donedonedone.tsv
+  229  for REF_ID in `cat all_retweeted_reference_IDs.tsv` ; do echo $REF_ID ; grep $REF_ID ../downloaded_tweets_extend_original_nolf2_NOBOT.tsv ; done > donedonedone.tsv
+  230  for REF_ID in `cat all_retweeted_reference_IDs.tsv` ; do echo $REF_ID | grep $REF_ID
+  231  ls -ltr
+  232  wc -l all_retweeted_reference_IDs.tsv 
+  233  ls -ltr
+  234  cd ..
+  235  ls -ltr
+  236  head all_hashtags_downloaded_tweets_extend_nolf2_NOBOT_retweeted.tsv 
+  237  rm all_hashtags_downloaded_tweets_extend_nolf2_NOBOT_retweeted.tsv 
+  238  ls -ltr
+  239  cd A5
+  240  ls -ltr
+  241  wc -l all_retweeted_reference_IDs.tsv 
+  242  wc -l all_hashtags_downloaded_tweets_extend_nolf2_NOBOT_retweeted.tsv 
+  243  ls -ltr
+  244  cd vivian
+  245  ls
+  246  mkdir ws10
+  247  cd ws10
+  248  cp ~/numbers.py  .
+  249  cat numbers.py 
+  250  cd ..
+  251  find . -name amazon_reviews_us_Books_v1_02.tsv
+  252  cp ws10/numbers.py .
+  253  time python3 numbers.py
+  254  cd ..
+  255  cd ws10
+  256  ln -s ../amazon_reviews_us_Books_v1_02.tsv 
+  257  time python3 numbers.py
+  258  vi numbers.awk
+  259  cat numbers.awk
+  260  ]
+  261  vi numbers.sh
+  262  cat numbers.sh
+  263  chmod 700 numbers.sh
+  264  time ./numbers.sh
+  265  time python3 numbers.py
+  266  cat numbers.py
+  267  cd vivian/A5
+  268  ls -ltr
+  269  head ../downloaded_tweets_extend_original_nolf2_NOBOT.tsv 
+  270  time join -t $'\t' -1 1 -2 1 -o2.2,2.4 all_retweeted_reference_IDs.tsv ../downloaded_tweets_extend_original_nolf2_NOBOT.tsv > join_REFIDs_downloaded_tweets_extend_nolf2_NOBOT_retweeted.tsv 
+  271  sort all_retweeted_reference_IDs.tsv > sorted_all_retweeted_reference_IDs.tsv
+  272  cd ..
+  273  tmux attach -t a5
+  274  cd vivian/A5
+  275  ls -ltr
+  276  head donedonedone.tsv 
+  277  wc -l donedonedone.tsv 
+  278  wc -l all_retweeted_reference_IDs.tsv 
+  279  wc -l cutf14__downloaded_tweets_extend_nolf2_NOBOT_retweeted.tsv 
+  280  rm cutf14__downloaded_tweets_extend_nolf2_NOBOT_retweeted.tsv 
+  281  mv create_clusters_INFL_userIDs_wHashtags_script.sh create_clusters.sh
+  282  ls -ltr
+  283  rm donedonedone.tsv 
+  284  ls -ltr
+  285  cd ..
+  286  ls -ltr
+  287  cd A5
+  288  ls -ltr
+  289  time for REF_ID in `cat all_retall_retweeted_reference_IDs.tsv`; do grep $REF_ID downloaded_tweets_extend_nolf2_NOBOT.tsv ; done > downloaded_tweets_extend_nolf2_NOBOT_retweeted.tsv
+  290  time for REF_ID in `cat all_retweeted_reference_IDs.tsv`; do grep $REF_ID downloaded_tweets_extend_nolf2_NOBOT.tsv ; done > downloaded_tweets_extend_nolf2_NOBOT_retweeted.tsv
+  291  wc -l downloaded_tweets_extend_nolf2_NOBOT_retweeted.tsv 
+  292  head downloaded_tweets_extend_nolf2_NOBOT_retweeted.tsv 
+  293  time for REF_ID in `cat all_retweeted_reference_IDs.tsv`; do grep $REF_ID downloaded_tweets_extend_original_nolf2_NOBOT.tsv ; done > downloaded_tweets_extend_nolf2_NOBOT_retweeted.tsv
+  294  time for REF_ID in `cat all_retweeted_reference_IDs.tsv`; do grep $REF_ID ../downloaded_tweets_extend_original_nolf2_NOBOT.tsv ; done > downloaded_tweets_extend_nolf2_NOBOT_retweeted.tsv
+  295  cut -f1 ../downloaded_tweets_extend_original_nolf2_NOBOT.tsv > cutf1_original.tsv
+  296  time for REF_ID in `cat all_retweeted_reference_IDs.tsv`; do grep $REF_ID cutf1_original.tsv ; done > test_retweeted.tsv
+  297  wc -l test_retweeted.tsv 
+  298  ls -ltr
+  299  head -n 2 all_hashtags_for_replied_to.tsv 
+  300  head -n 2 hashtags_entire_dataset_downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv 
+  301  head -n 2 downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv 
+  302  history | grep *create*
+  303  history | grep create_clusters_INFL_userIDs_wHashtags_script.sh
+  304  history | grep a5.sh
+  305  cd vivian
+  306  tmux attach -t a5
+  307  cd vivian/A5
+  308  ls -ltr
+  309  sort -k1 join_REFIDs_downloaded_tweets_extend_nolf2_NOBOT_retweeted.tsv 
+  310  ls -ltr
+  311  ]
+  312  time join -t $'\t' -1 1 -2 1 -o2.2,2.4 all_retweeted_reference_IDs.tsv ../downloaded_tweets_extend_original_nolf2_NOBOT.tsv > join_REFIDs_downloaded_tweets_extend_nolf2_NOBOT_retweeted.tsv 
+  313  vi create_clusters.sh 
+  314  mkdir testdir
+  315  vi create_clusters.sh 
+  316  mkdir testdir
+  317  vi create_clusters.sh 
+  318  cd vivian
+  319  ls
+  320  cd ws10
+  321  ls
+  322  script ws10.txt
+  323  nano testdata.txt
+  324  awk -F'\t' -f numbers.awk testdata.txt
+  325  nano testdata.txt
+  326  awk -F'\t' -f numbers.awk testdata.txt
+  327  head -n 2 amazon_reviews_us_Books_v1_02.tsv 
+  328  nano testdata.txt
+  329  awk -F'\t' -f numbers.awk testdata.txt
+  330  time ./numbers.sh 
+  331  history > cmds.log
+  332  ls
+  333  cd vivian
+  334  cd ws10
+  335  ls
+  336  nano numbers.awk
+  337  nano numbers.sh
+  338  time ./numbers.sh 
+  339  time cat amazon_reviews_us_Books_v1_02.tsv > /dev/null
+  340  time awk -F'\t' '{count++}' amazon_reviews_us_Books_v1_02.tsv
+  341  time awk -F'\t' '{count+=$9}' amazon_reviews_us_Books_v1_02.tsv
+  342  time awk -F'\t' '{count=$9}' amazon_reviews_us_Books_v1_02.tsv
+  343  time awk '{count=$9}' amazon_reviews_us_Books_v1_02.tsv
+  344  time awk -F'\t' '{count=$1}' amazon_reviews_us_Books_v1_02.tsv
+  345  time awk -F'\t' '{count=$2}' amazon_reviews_us_Books_v1_02.tsv
+  346  time awk -F'\t' '{count=$3}' amazon_reviews_us_Books_v1_02.tsv
+  347  time awk -F'\t' '{count=$10}' amazon_reviews_us_Books_v1_02.tsv
+  348  time awk -F'\t' '{count=$9}' amazon_reviews_us_Books_v1_02.tsv
+  349  time awk -F'\t' '{count=$11}' amazon_reviews_us_Books_v1_02.tsv
+  350  cat ws10.txt 
+  351  2R1;95;0c10;rgb:f54f/f54f/f54f11;rgb:0000/0000/00002R1;95;0c10;rgb:f54f/f54f/f54f11;rgb:0000/0000/0000
+  352  time ./numbers.sh 
+  353  nano numbers.awk 
+  354  time ./numbers.sh 
+  355  time python3 numbers.py 
+  356  nano numbers.py
+  357  nano numbers.awk
+  358  vi numbers.awk 
+  359  cat numbers.awk 
+  360  nano numbers.py
+  361  time python3 numbers.py 
+  362  nano numbers.py
+  363  nano numbers.awk
+  364  time ./numbers.sh 
+  365  nano numbers.awk
+  366  time ./numbers.sh 
+  367  ls
+  368  mv ws10.txt > ws10.bak.txt
+  369  mv ws10.txt ws10.bak.txt
+  370  nano ws10.txt
+  371  echo "# ws10" >> README.md
+  372  git init
+  373  git add README.md
+  374  ls
+  375  git status
+  376  git add cmds.log
+  377  git add numbers.awk
+  378  git add numbers.sh
+  379  git add ws10.txt
+  380  git status
+  381  git commit -m 'worksheet 10 commit'
+  382  git branch -M main
+  383  git remote add origin https://github.com/ivyle201/ws10.git
+  384  git push -u origin main
+  385  ssh vivian@172.31.197.164
+  386  tmux attach -t a5
+  387  cd vivian/A5
+  388  ls -ltrh
+  389  vi a5_count_hashtags.sh 
+  390  cd vivian/A5
+  391  vi a5_count_hashtags.sh 
+  392  cd vivian
+  393  ls
+  394  cd A5
+  395  ls
+  396  cat a5_count_hashtags.sh
+  397  ./a5_count_hashtags.sh
+  398  ls
+  399  ./a5_count_hashtags.sh
+  400  ./a5_count_hashtags.sh < INFLUENCE_CLUSTERS_RETWEETS 2
+  401  ./a5_count_hashtags.sh < echo 'INFLUENCE_CLUSTERS_RETWEETS 2'
+  402  echo 'INFLUENCE_CLUSTERS_RETWEETS 2' | ./a5_count_hashtags.sh
+  403  ls
+  404  echo 'INFLUENCE_CLUSTERS_REPLIES 1' | ./a5_count_hashtags.sh
+  405  ls INFLUENCE_CLUSTERS_REPLIES2 | wc -l
+  406  mkdir INFLUENCE_CLUSTERS_REPLIES2
+  407  echo 'INFLUENCE_CLUSTERS_REPLIES2 1' | ./a5_count_hashtags.sh
+  408  cd INFLUENCE_CLUSTERS_REPLIES2
+  409  ls
+  410  rmdir INFLUENCE_CLUSTERS_REPLIES2
+  411  cd ..
+  412  rmdir INFLUENCE_CLUSTERS_REPLIES2
+  413  echo 'INFLUENCE_CLUSTERS_REPLIES 1' | ./a5_count_hashtags.sh
+  414  cat INFLUENCE_CLUSTERS_REPLIES/1005846500583321601
+  415  echo 'INFLUENCE_CLUSTERS_REPLIES 1' | ./a5_count_hashtags.sh > replies_hashtag_freqs.tsv 
+  416  echo 'INFLUENCE_CLUSTERS_RETWEETS 2' | ./a5_count_hashtags.sh > retweets_hashtag_freqs.tsv 
+  417  head replies_hashtag_freqs.tsv
+  418  head retweets_hashtag_freqs.tsv 
+  419  ls INFLUENCE_CLUSTERS_RETWEETS | wc -l
+  420  ls INFLUENCE_CLUSTERS_REPLIES | wc -l
+  421  ls
+  422  wc -l replied_to_INFL_UserIDs_3Rgreater.tsv
+  423  wc -l hashtags_entire_dataset_downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv
+  424  history | replied_to_INFL_UserIDs_3Rgreater.tsv
+  425  history | greap replied_to_INFL_UserIDs_3Rgreater.tsv
+  426  history | grep replied_to_INFL_UserIDs_3Rgreater.tsv
+  427  tmux attach -t a5
+  428  cd vivian
+  429  ls
+  430  cd A5
+  431  ls
+  432  nano a5_count_hashtags.sh
+  433  cp a5_count_hashtags.bak.sh
+  434  cp a5_count_hashtags.sh a5_count_hashtags.bak.sh
+  435  nano a5_count_hashtags.sh
+  436  cd vivian
+  437  ls
+  438  cd
+  439  ls -ltrh
+  440  cd A4
+  441  ls -ltrh
+  442  wc -l fgrep_orig-AuthorIDs-gotRetweets-3Rgreater_downloadOrig_awkPrint_origMIDs.tsv
+  443  rm testtest.tsv
+  444  rm testtest2.tsv
+  445  vi a5_count_hashtags.sh 
+  446  cd ..
+  447  ls -ltrh
+  448  cd A3
+  449  ls -ltrh
+  450  wc -l A_ID_uniqc-greater3
+  451  cd -l A_ID_uniqc-greater3.tsv
+  452  wc -l A_ID_uniqc-greater3.tsv
+  453  cd ..
+  454  cd vivian/=
+  455  cd vivian
+  456  tmux attach -t a5
+  457  cd vivian/A5
+  458  ls -ltrh
+  459  ./calculate_relative_freq_script.sh
+  460  ls -ltrh
+  461  ls testtest
+  462  head -n 3 testest
+  463  ./calculate_relative_freq_script.sh
+  464  head replies_hashtag_freqs.tsv
+  465  ./calculate_relative_freq_script.sh
+  466  grep covid hashtags_entire_dataset_downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv | wc -l`
+  467  grep covid hashtags_entire_dataset_downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv | wc -l
+  468  ./calculate_relative_freq_script.sh
+  469  tmux attach -t a5
+  470  cd vivian/a5
+  471  cd vivian/A5
+  472  ./calculate_relative_freq_script.sh
+  473  head -n 3 replies_hashtag_freqs.tsv
+  474  cd vivian
+  475  cd A5
+  476  ls -ltrh
+  477  ./calculate_relative_freq_script.sh
+  478  read retweets_hashtag_freqs.ts
+  479  read retweets_hashtag_freqs.tsv
+  480  head retweets_hashtag_freqs.tsv
+  481  cd vivian/A5
+  482  cd ..
+  483  tmux attach -t a5
+  484  cd vivian/A5
+  485  head -n 3 hashtags_entire_dataset_downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv
+  486  sort hashtags_entire_dataset_downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv > sorted_hashtags_entire_dataset_original.tsv
+  487  ./calculate_relative_freq_script.sh
+  488  sort hashtags_entire_dataset_downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv > sorted_hashtags_entire_dataset_original_replies.tsv
+  489  rm sorted_hashtags_entire_dataset_original.tsv
+  490  rm sorted_hashtags_entire_dataset_original_replies.tsv
+  491  history | grep all_hashtags_for_RETWEETED
+  492  cp all_hashtags_for_RETWEETED sorted_all_hashtags_for_RETWEETED
+  493  ls -ltrh
+  494  sort all_hashtags_for_RETWEETED.tsv > sorted_ all_hashtags_for_RETWEETED.tsv
+  495  chmod 700 cache_array_script.sh
+  496  ./cache_array_script.sh
+  497  ls -ltrh
+  498  mv sorted_ all_hashtags_for_RETWEETED.tsv sorted_all_hashtags_for_RETWEETED.tsv
+  499  sort all_hashtags_for_RETWEETED.tsv > sorted_all_hashtags_for_RETWEETED.tsv
+  500  ls -ltrh
+  501  cd sorted_
+  502  ls sorted_
+  503  mv sorted
+  504  ./cache_array_script.sh
+  505  head retweets_hashtag_freqs.tsv
+  506  ./cache_array_script.sh
+  507  tmux attach -t a5
+  508  cd vivian/A5
+  509  cd ..
+  510  tmux attach -t a5
+  511  cd vivian/A5
+  512  ls -ltrh
+  513  ./cache_array_script.sh
+  514  head  retweets_hashtag_freqs.tsv
+  515  ./cache_array_script.sh
+  516  head replies_hashtag_freqs.tsv
+  517  ./cache_array_script.sh
+  518  time ./cache_array_script.sh
+  519  ./cache_array_script.sh
+  520  head replies_hashtag_freqs.tsv
+  521  tmux new-session Assignment_#5
+  522  cd ..
+  523  tmux new-session Assignment_#5
+  524  tmux new-session -t Assignment_#5
+  525  cd vivian/A5
+  526  ls -ltrh
+  527  head downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv
+  528  head downloaded_tweets_extend_original_nolf2_NOBOT.tsv
+  529  grep 1120982666457829376 downloaded_tweets_extend_original_nolf2_NOBOT.tsv
+  530  grep "type=replied_to" downloaded_tweets_extend_original_nolf2_NOBOT.tsv | head -n 2
+  531  grep "type=replied_to" downloaded_tweets_extend_original_nolf2_NOBOT.tsv | awk -F "\t" ' {print $6}' | head -n 4
+  532  grep 807095 downloaded_tweets_extend_original_nolf2_NOBOT.tsv
+  533  cd ..
+  534  tmux attach -t a5
+  535  grep "type=replied_to" downloaded_tweets_extend_original_nolf2_NOBOT.tsv | awk -F "\t" ' {print $6}' | sort | uniq -c | sort -nr | awk '{if ($1>=3)
+  536   print $2}' > INFL_UserIDs_3Rgreater_replies.tsv
+  537  ls
+  538  cd vivian
+  539  script a5.txt
+  540  cd A5
+  541  grep "type=replied_to" downloaded_tweets_extend_original_nolf2_NOBOT.tsv | awk -F "\t" ' {print $6}' | sort | uniq -c | sort -nr | awk '{if ($1>=3)
+  542   print $2}' > INFL_UserIDs_3Rgreater.tsv
+  543  grep "type=replied_to" downloaded_tweets_extend_original_nolf2_NOBOT.tsv | awk -F "\t" ' {print $6}' | sort | uniq -c | sort -nr | awk '{if ($1>=3)
+  544   print $2}' > INFL_UserIDs_3Rgreater_replies.tsv
+  545  head INFL_UserIDs_3Rgreater_replies.tsv
+  546  grep "type=replied_to" ../downloaded_tweets_extend_original_nolf2_NOBOT.tsv | cut -f2,4 | fgrep -f INFL_UserIDs_3Rgreater_replies.tsv | cut -f2 | tr ',' '\n' | tr '"' '\n'| tr '[:upper:]' '[:lower:]' | grep . > all_hashtags_INFL_UserIDs_3Rgreater_replies.tsv
+  547  head all_hashtags_INFL_UserIDs_3Rgreater_replies.tsv
+  548  grep "type=replied_to" ../downloaded_tweets_extend_original_nolf2_NOBOT.tsv | cut -f4 | tr ',' '\n' | tr '"' '\n'| tr '[:upper:]' '[:lower:]' | grep . > entire_hashtags_for_replies.tsv
+  549  head entire_hashtags_for_replies.tsv
+  550  wc -l entire_hashtags_for_replies.tsv
+  551  wc -l all_hashtags_INFL_UserIDs_3Rgreater_replies.tsv
+  552  grep "type=replied_to" ../downloaded_tweets_extend_original_nolf2_NOBOT.tsv > original_replies.tsv
+  553  fgrep -f INFL_UserIDs_3Rgreater_replies.tsv original_replies.tsv |  cut -f 4 | tr ',' '\n' | tr '"' '\n'| tr '[:upper:]' '[:lower:]' | grep . > all_hashtags_INFL_UserIDs_3Rgreater_replies.tsv
+  554  head all_hashtags_INFL_UserIDs_3Rgreater_replies.tsv
+  555  wc -l all_hashtags_INFL_UserIDs_3Rgreater_replies.tsv
+  556  grep "type=replied_to" ../downloaded_tweets_extend_original_nolf2_NOBOT.tsv | cut -f2,4 > grep_replied_to_cutf24_downloaded_tweets_extend_original_nolf2_NOBOT.tsv
+  557  wc -l all_hashtags_INFL_UserIDs_3Rgreater_replies.tsv 
+  558  wc -l INFL_UserIDs_3Rgreater_replies.tsv 
+  559  wc -l entire_hashtags_for_replies.tsv 
+  560  grep "type=retweeted" downloaded_tweets_extend_nolf2_NOBOT.tsv | cut -f5 | sed -r 's/\[<ReferencedTweet id=([0-9]+) type=retweeted\]/\1/' > all_retweeted_refer
+  561  grep "type=retweeted" downloaded_tweets_extend_nolf2_NOBOT.tsv | cut -f5 | sed -r 's/\[<ReferencedTweet id=([0-9]+) type=retweeted\]/\1/' > grep_type=retweeted_sedREgex_all_ref_IDs.tsv
+  562  head grep_type=retweeted_sedREgex_all_ref_IDs.tsv
+  563  wc -l grep_type=retweeted_sedREgex_all_ref_IDs.tsv
+  564  grep "type=replied_to" downloaded_tweets_extend_original_nolf2_NOBOT.tsv | awk -F "\t" ' {print $6}' | sort | uniq -c | sort -nr | awk '{if ($1>=3)
+  565   print $2}' > INFL_UserIDs_3Rgreater_replies.tsv
+  566  head INFL_UserIDs_3Rgreater_replies.tsv
+  567  wc -l INFL_UserIDs_3Rgreater_replies.tsv
+  568  grep "type=replied_to" ../downloaded_tweets_extend_original_nolf2_NOBOT.tsv | cut -f4 | tr ',' '\n' | tr '"' '\n'| tr '[:upper:]' '[:lower:]' | grep . > entire_hashtags_for_replies.tsv
+  569  grep "type=replied_to" .downloaded_tweets_extend_original_nolf2_NOBOT.tsv | cut -f4 | tr ',' '\n' | tr '"' '\n'| tr '[:upper:]' '[:lower:]' | grep . > entire_hashtags_for_replies.tsv
+  570  grep "type=replied_to" downloaded_tweets_extend_original_nolf2_NOBOT.tsv | cut -f4 | tr ',' '\n' | tr '"' '\n'| tr '[:upper:]' '[:lower:]' | grep . > entire_hashtags_for_replies.tsv
+  571  head entire_hashtags_for_replies.tsv
+  572  wc -l entire_hashtags_for_replies.tsv
+  573  grep "type=replied_to" downloaded_tweets_extend_original_nolf2_NOBOT.tsv > original_replies.tsv
+  574  fgrep -f INFL_UserIDs_3Rgreater_replies.tsv original_replies.tsv |  cut -f 4 | tr ',' '\n' | tr '"' '\n'| tr '[:upper:]' '[:lower:]' | grep . > all_hashtags_INFL_UserIDs_3Rgreater_replies.tsv
+  575  head all_hashtags_INFL_UserIDs_3Rgreater_replies.tsv
+  576  wc -l all_hashtags_INFL_UserIDs_3Rgreater_replies.tsv
+  577  grep "type=retweeted" downloaded_tweets_extend_nolf2_NOBOT.tsv | cut -f5 | sed -r 's/\[<ReferencedTweet id=([0-9]+) type=retweeted\]/\1/' > all_reference_IDs_retweets.tsv
+  578  sort all_reference_IDs_retweets.tsv > sorted_all_reference_IDs_retweets.tsv
+  579  head sorted_all_reference_IDs_retweets.tsv
+  580  wc -l sorted_all_reference_IDs_retweets.tsv
+  581  sort downloaded_tweets_extend_original_nolf2_NOBOT.tsv > sorted_downloaded_tweets_extend_original_nolf2_NOBOT.tsv
+  582  head sorted_downloaded_tweets_extend_original_nolf2_NOBOT.tsv
+  583  join -t $'\t' -1 1 -2 1 -o2.2,2.4 sorted_all_retweeted_reference_IDs.tsv sorted_downloaded_tweets_extend_original_nolf2_NOBOT.tsv > retweets_all_userIDs_and_hashtags_after_join_RefIDs_wOriginal.tsv
+  584  join -t $'\t' -1 1 -2 1 -o2.2,2.4 sorted_all_reference_IDs_retweets.tsv sorted_downloaded_tweets_extend_original_nolf2_NOBOT.tsv > retweets_all_userIDs_and_hashtags_after_join_RefIDs_wOriginal.tsv
+  585  head retweets_all_userIDs_and_hashtags_after_join_RefIDs_wOriginal.tsv
+  586  cut -f2 retweets_all_userIDs_and_hashtags_after_join_RefIDs_wOriginal.tsv | tr ',' '\n' | tr '"' '\n'| tr '[:upper:]' '[:lower:]' | grep . > entire_hashtags_for_retweets.tsv
+  587  head entire_hashtags_for_retweets.tsv
+  588  wc -l entire_hashtags_for_retweets.tsv
+  589  cut -f1 retweets_all_userIDs_and_hashtags_after_join_RefIDs_wOriginal.tsv | sort | uniq -c | sort -nr | awk '{if ($1>=3) print $2}' > INFL_UserIDs_3Rgreater_retweets.tsv
+  590  head INFL_UserIDs_3Rgreater_retweets.tsv
+  591  wc -l INFL_UserIDs_3Rgreater_retweets.tsv
+  592  fgrep -f INFL_UserIDs_3Rgreater_retweets.tsv retweets_all_userIDs_and_hashtags_after_join_RefIDs_wOriginal.tsv | awk '{print $2}' | tr ',' '\n' | tr '"' '\n'| tr '[:upper:]' '[:lower:]' | grep . > all_hashtags_INFL_UserIDs_3Rgreater_retweets.tsv
+  593  head all_hashtags_INFL_UserIDs_3Rgreater_retweets.tsv
+  594  wc -l all_hashtags_INFL_UserIDs_3Rgreater_retweets.tsv
+  595  cut -f4 downloaded_tweets_extend_original_nolf2_NOBOT.tsv | tr ',' '\n' | tr '"' '\n'| tr '[:upper:]' '[:lower:]' | grep . > entire_hashtags_dataset_of_downloaded_tweets_extend_original_nolf2_NOBOT.tsv
+  596  head entire_hashtags_dataset_of_downloaded_tweets_extend_original_nolf2_NOBOT.tsv
+  597  wc -l entire_hashtags_dataset_of_downloaded_tweets_extend_original_nolf2_NOBOT.tsv
+  598  vi create_clusters.sh 
+  599  cat create_clusters.sh 
+  600  chmod 700 create_clusters.sh 
+  601  ./create_clusters.sh 
+  602  cd vivian/A5
+  603  ls -lrX
+  604  cd ../A5_bak
+  605  ls -lrX
+  606  cd ../A5
+  607  mkdir INFLUENCE_CLUSTERS_RETWEETS
+  608  mkdir INFLUENCE_CLUSTERS_REPLIES
+  609  ls -lrX
+  610  cd ../A5_bak
+  611  ls -lrX
+  612  mv A5 create_clusters.sh
+  613  ls -lrX
+  614  vi create_clusters.sh 
+  615  rm create_clusters.sh 
+  616  ls -lrX
+  617  cd ../A5
+  618  ls -lrX
+  619  cd ../A5_bak
+  620  vi calculate_relative_freq_script.sh
+  621  cd ../A5
+  622  ./create_clusters.sh
+  623  wc -l INFL_UserIDs_3Rgreater_replies.tsv-
+  624  cd ../A5_bak
+  625  ls -lrX
+  626  vi calculate_relative_freq_script.sh 
+  627  vi cache_array_script.sh
+  628  cd ../A5
+  629  vi cache_array_script.sh-
+  630  cd ../A5_bak
+  631  ./cache_array_script.sh
+  632  vi  cache_array_script.sh
+  633  cd ../A5
+  634  ls -lX
+  635  vi create_clusters.sh
+  636  cd A5_bak
+  637  cd ../A%
+  638  cd ../A5
+  639  ls -lX
+  640  wc -l downloaded_tweets_extend_original_nolf2_NOBOT_replies.tsv
+  641  ls -lX
+  642  ./cache_array_script.sh
+  643  ./create_clusters.sh
+  644  ls -lX
+  645  vi create_clusters.sh
+  646  ls
+  647  cd vivian
+  648  ls
+  649  mv a5.txt a5.bak.txt
+  650  ls
+  651  cd A5
+  652  ls
+  653  cd ..
+  654  script a5.txt
+  655  ls
+  656  rm a5.txt
+  657  cd A5
+  658  script a5.txt
+  659  cd vivian/A5
+  660  ls -lrx
+  661  ls -lrX
+  662  mv cache_array_script.sh calculate_relative_freq_cache_script.sh
+  663  ls -lrX
+  664  vi calculate_relative_freq_cache_script.sh
+  665  cd ../A5_bak
+  666  ls -lX
+  667  cp cache_array_script.sh ../A5/cache_array_script.sh
+  668  cd ../A5
+  669  ls -lX
+  670  cd ../A5_bak
+  671  ls -lX
+  672  head -n 2 hashtags_entire_dataset_downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv
+  673  wc -l hashtags_entire_dataset_downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv
+  674  head -n 2 all_hashtags_for_RETWEETED.tsv
+  675  wc -l all_hashtags_for_RETWEETED.tsv
+  676  cd ../A5
+  677  ls -lX
+  678  wc -l entire_hashtags_for_replies.tsv
+  679  wc -l entire_hashtags_for_retweets.tsv
+  680  ./cache_array_script.sh
+  681  ls -lX
+  682  wc -l INFL_UserIDs_3Rgreater_replies.tsv
+  683  wc - INFL_UserIDs_3Rgreater_retweets.tsv
+  684  wc -l INFL_UserIDs_3Rgreater_retweets.tsv
+  685  ls -lX ../A5_bak
+  686  wc -l replied_to_INFL_UserIDs_3Rgreater.tsv
+  687  wc -l ../A5_bak/replied_to_INFL_UserIDs_3Rgreater.tsv
+  688  wc -l ../A5_bak/retweeted_INFL_UserIDs_3Rgreater.tsv
+  689  wc -l ../A5_bak/INFL_UserIDs_3Rgreater_retweets.tsv
+  690  vi calculate_relative_freq_cache_script
+  691  vi ../A5_bak/calculate_relative_freq_script.sh
+  692  head INFLUENCE_CLUSTERS_REPLIES
+  693  ls INFLUENCE_CLUSTERS_REPLIES | head
+  694  cat 1080844782
+  695  cat INFLUENCE_CLUSTERS_REPLIES/1080844782
+  696  cat INFLUENCE_CLUSTERS_REPLIES/1108565574
+  697  ls -lX ../A5_bak
+  698  cd ..
+  699  tmux attach -t a5
+  700  more a5.txt
+  701  cd ../A5_bak
+  702  cd A5_bak
+  703  more a5.txt
+  704  cd ..
+  705  cd A5
+  706  ls -lrX
+  707  head downloaded_tweets_extend_original_nolf2_NOBOT.tsv
+  708  head downloaded_tweets_extend_nolf2_NOBOT.tsv
+  709  grep "type=replies" downloaded_tweets_extend_nolf2_NOBOT.tsv | head -n 2
+  710  grep "type=replies" downloaded_tweets_extend_original_nolf2_NOBOT.tsv | head -n 2
+  711  grep "type=replied_to" downloaded_tweets_extend_nolf2_NOBOT.tsv | head -n 2
+  712  grep "type=replied_to" downloaded_tweets_extend_original_nolf2_NOBOT.tsv | head -n 2
+  713  head downloaded_tweets_extend_original_nolf2_NOBOT.tsv
+  714  head downloaded_tweets_extend_nolf2_NOBOT.tsv
+  715  ls -lX
+  716  cd ../A5_bak
+  717  ls -lX
+  718  sort INFL_UserIDs_3Rgreater_replies.tsv| head
+  719  sort replied_to_INFL_UserIDs_3Rgreater.tsv | head
+  720  ls -lX
+  721  cd a5_bak
+  722  ls -lX
+  723  vi a5_count_draft.sh
+  724  history | grep create_clusters
+  725  vi create_clusters.sh
+  726  vi a5.sh
+  727  cd ..
+  728  cd A5
+  729  ls -lX
+  730  grep "replied_to" downloaded_tweets_extend_original_nolf2_NOBOT.tsv > downloaded_tweets_extend_original_nolf2_NOBOT_replies.tsv
+  731  ls -lX
+  732  ./create_clusters.sh
+  733  wc -l downloaded_tweets_extend_original_nolf2_NOBOT_replies.tsv
+  734  cd ../A5
+  735  cd ../A5_bak
+  736  ls -ltrx
+  737   hashtags_entire_dataset_downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv
+  738  head  hashtags_entire_dataset_downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv
+  739  ls -lX
+  740  cd ../A5
+  741  ls -lX
+  742  rm join_ref_ids_downloaded_tweets_extend_original_nolf2_NOBOT_reweets.tsv
+  743  grep replied_to downloaded_tweets_extend_original_nolf2_NOBOT.tsv > downloaded_tweets_extend_original_nolf2_NOBOT_repliedTo.tsv
+  744  grep retweeted downloaded_tweets_extend_original_nolf2_NOBOT.tsv > downloaded_tweets_extend_original_nolf2_NOBOT_RETWEETED.tsv
+  745  head downloaded_tweets_extend_original_nolf2_NOBOT_RETWEETED.tsv
+  746  grep type=retweeted downloaded_tweets_extend_original_nolf2_NOBOT.tsv | head 
+  747  head downloaded_tweets_extend_original_nolf2_NOBOT_repliedTo.tsv
+  748  vi downloaded_tweets_extend_original_nolf2_NOBOT_repliedTo.tsv
+  749  grep type=retweeted downloaded_tweets_extend_nolf2_NOBOT.tsv > downloaded_tweets_extend_original_nolf2_NOBOT_RETWEETED.tsv
+  750  vi downloaded_tweets_extend_original_nolf2_NOBOT_RETWEETED.tsv
+  751  ls -lX
+  752  vi create_clusters.sh
+  753  cd vivian/A5
+  754  ls
+  755  ls sorted*
+  756  ls
+  757  ls INFLUENCE_CLUSTERS_REPLIES | wc -l
+  758  ls INFLUENCE_CLUSTERS_RETWEETS | wc -l
+  759  ./calculate_relative_freq_cache_script.sh 
+  760  ls INFLUENCE_CLUSTERS_REPLIES | head
+  761  cat INFLUENCE_CLUSTERS_REPLIES/1005846500583321601
+  762  ./calculate_relative_freq_cache_script.sh 
+  763  ./calculate_relative_freq_cache_script2.sh 
+  764  ls INFLUENCE_CLUSTERS_RETWEETS | wc -l
+  765  ./calculate_relative_freq_cache_script.sh 
+  766  ./calculate_relative_freq_cache_script.sh
+  767  grep standwithukraine entire_hashtags_for_replies.tsv
+  768  ./calculate_relative_freq_cache_script.sh
+  769  grep hererightmatters entire_hashtags_for_replies.tsv
+  770  grep hererightmatters downloaded_tweets_extend_original_nolf2_NOBOT.tsv
+  771  grep hererightmatters downloaded_tweets_extend_nolf2_NOBOT.tsv 
+  772  grep matters downloaded_tweets_extend_original_nolf2_NOBOT.tsv
+  773  grep matters downloaded_tweets_extend_original_nolf2_NOBOT.tsv | head
+  774  grep matters downloaded_tweets_extend_original_nolf2_NOBOT.tsv | more
+  775  grep matters downloaded_tweets_extend_original_nolf2_NOBOT.tsv
+  776  grep matters downloaded_tweets_extend_nolf2_NOBOT.tsv
+  777  grep hererightmatters all_hashtags_INFL_UserIDs_3Rgreater_replies.tsv
+  778  grep -r hererightmatters .
+  779  grep -r hererightmatters  downloaded_tweets_extend_original_nolf2_NOBOT.tsv
+  780  cut -f4 downloaded_tweets_extend_original_nolf2_NOBOT.tsv | tr ',' '\n' | tr '"' '\n'| tr '[:upper:]' '[:lower:]' | grep hererightmatters
+  781  cut -f4 downloaded_tweets_extend_original_nolf2_NOBOT.tsv | head
+  782  cut -f4 downloaded_tweets_extend_original_nolf2_NOBOT.tsv | tr ',' '\n' | tr '"' '\n' | head
+  783  cut -f4 downloaded_tweets_extend_original_nolf2_NOBOT.tsv | tr ',' '\n' | head
+  784  cut -f4 downloaded_tweets_extend_original_nolf2_NOBOT.tsv | tr ',' '\n' | tr '"' '\n' | head
+  785  cut -f4 downloaded_tweets_extend_original_nolf2_NOBOT.tsv | tr ',' '\n' | tr '"' '\n'| head
+  786  cut -f4 downloaded_tweets_extend_original_nolf2_NOBOT.tsv | tr ',' '\n' | tr '"' '\n'| tr '[:upper:]' '[:lower:]' | grep hererightmatters
+  787  ls
+  788  head entire_hashtags_for_replies.tsv 
+  789  ls INFLUENCE_CLUSTERS_REPLIES | head -1
+  790  grep -r 1005846500583321601 .
+  791  sort INFL_UserIDs_3Rgreater_replies.tsv | head
+  792  grep -r hererightmatters .
+  793  ls -l INFLUENCE_CLUSTERS_RETWEETS | wc -l
+  794  ls -l INFLUENCE_CLUSTERS_REPLIES | wc -l
+  795  ls
+  796  cat cache_array_script.sh
+  797  ls
+  798  cat create_clusters.sh
+  799  ls INFLUENCE_CLUSTERS_REPLIES | head -1
+  800  cat INFLUENCE_CLUSTERS_REPLIES/1005846500583321601
+  801  cat ../A5_bak/INFLUENCE_CLUSTERS_REPLIES/1005846500583321601
+  802  cat create_clusters.sh
+  803  ls
+  804  mv a5.txt a5.bak.txt
+  805  nano a5.txt
+  806  ls
+  807  cp ../A5_bak/replies_hashtag_freqs.tsv .
+  808  cd INFLUENCE_CLUSTERS_REPLIES
+  809  echo "# a5" >> README.md
+  810  git init
+  811  git add README.md
+  812  history > cmds.log
+  813  ls
+  814  git add create_clusters.sh
+  815  git add calculate_relative_freq_cache_script.sh
+  816  git add replies_hashtag_freqs.tsv
+  817  git add retweets_hashtag_freqs.tsv
+  818  git status
+  819  git add a5.txt 
+  820  git commit -m 'assignment 5 commit'
+  821  git branch -M main
+  822  git remote add origin https://github.com/ivyle201/a5.git
+  823  git push -u origin main
+  824  head replies_hashtag_freqs.tsv
+  825  sort -k3 replies_hashtag_freqs.tsv | head -20
+  826  sort -k3 retweets_hashtag_freqs.tsv | head -20 
+  827  sort -k3 retweets_hashtag_freqs.tsv | head -20 | column -t
+  828  sort -k3 replies_hashtag_freqs.tsv | head -20 | column -t
+  829  join -t $'\t' -1 1 -2 1 sorted_all_reference_IDs_retweets.tsv sorted_downloaded_tweets_extend_original_nolf2_NOBOT.tsv > join_ref_ids_downloaded_tweets_extend_original_nolf2_NOBOT_reweets.tsv
+  830  head join_ref_ids_downloaded_tweets_extend_original_nolf2_NOBOT_reweets.tsv
+  831  sort -nr -k3 replies_hashtag_freqs.tsv | head -20 | column -t
+  832  sort -nr -k3 replies_hashtag_freqs.tsv | head -50 | column -t
+  833  ls
+  834  ./calculate_relative_freq_cache_script.sh
+  835  nano ./calculate_relative_freq_cache_script.sh
+  836  ./calculate_relative_freq_cache_script.sh
+  837  ls
+  838  wc -l entire_hashtags_for_replies.tsv
+  839  ls ../A5_bak/
+  840  wc -l ../A5_bak/hashtags_entire_dataset_downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv
+  841  ls INFLUENCE_CLUSTERS_REPLIES | head -1
+  842  cat INFLUENCE_CLUSTERS_REPLIES/1005846500583321601
+  843  grep 1005846500583321601 *
+  844  ls
+  845  sort -nr -k3 ../A5_bak/replies_hashtag_freqs.tsv | head -20 | column -t
+  846  sort -nr -k3 ../A5_bak/retweets_hashtag_freqs.tsv | head -20 | column -t
+  847  ls
+  848  ./calculate_relative_freq_cache_script.sh
+  849  ./cache_array_script.sh 
+  850  cat INFLUENCE_CLUSTERS_REPLIES/1005846500583321601
+  851  ls
+  852  ./calculate_relative_freq_cache_script.sh
+  853  nano calculate_relative_freq_cache_script.sh
+  854  ./calculate_relative_freq_cache_script.sh
+  855  nano ./calculate_relative_freq_cache_script.sh
+  856  ./cache_array_script.sh 
+  857  cd A5
+  858  cd vivian/A5
+  859  ls -lX
+  860  vi create_clusters.sh 
+  861  cat create_clusters.sh 
+  862  ./create_clusters.sh
+  863  ./cache_array_script.sh
+  864  cat create_clusters.sh
+  865  vi cache_array_script.sh
+  866  ls -lX
+  867  history | grep downloaded_tweets_extend_original_nolf2_NOBOT_repliedTo.tsv
+  868  cd vivian
+  869  cd A5
+  870  ls
+  871  nano calculate_relative_freq_cache_script.sh
+  872  ls
+  873  nano calculate_relative_freq_cache_script2.sh
+  874  chmod u_x calculate_relative_freq_cache_script2.sh
+  875  chmod 700 calculate_relative_freq_cache_script2.sh
+  876  ./calculate_relative_freq_cache_script2.sh
+  877  nano ./calculate_relative_freq_cache_script2.sh
+  878  nano ./calculate_relative_freq_cache_script.sh
+  879  join -t $'\t' -1 1 -2 1 sorted_all_reference_IDs_retweets.tsv sorted_downloaded_tweets_extend_original_nolf2_NOBOT.tsv > join_retweeted_message_ids_with_original_nolf2_NOBOT.tsv
+  880  ls INFLUENCE_CLUSTERS_REPLIES | wc -l
+  881  wc -l INFL_UserIDs_3Rgreater_retweets.tsv
+  882  sort -nr -k3 replies_hashtag_freqs.tsv | head -20 | column -t
+  883  cat INFLUENCE_CLUSTERS_REPLIES/713752653289955329
+  884  ls
+  885  ls INFLUENCE_CLUSTERS_RETWEETS | wc -l
+  886  wc -l retweets_hashtag_freqs.tsv 
+  887  head join_retweeted_message_ids_with_original_nolf2_NOBOT.tsv
+  888  grep replied_to downloaded_tweets_extend_original_nolf2_NOBOT.tsv > downloaded_tweets_extend_original_nolf2_NOBOT_repliedTo.tsv 
+  889  cd vivian
+  890  cd A5
+  891  ls
+  892  head replies_hashtag_freqs.tsv
+  893  sort -k 3 replies_hashtag_freqs.tsv | head -n 20
+  894  column
+  895  sort -k 3 replies_hashtag_freqs.tsv | head -n 20 | column -t
+  896  sort -k 3 replies_hashtag_freqs.tsv | head -n 20 | column -t | cut -f2
+  897  sort -kn 3 replies_hashtag_freqs.tsv | head -n 20 | column 
+  898  sort -n -k 3 replies_hashtag_freqs.tsv | head -n 20 | column -t
+  899  sort -rn -k 3 replies_hashtag_freqs.tsv | head -n 20 | column -t
+  900  sort -rn -k 3 retweets_hashtag_freqs.tsv | head -n 20 | column -t
+  901  grep truckertantrum2022 sorted-all_hashtags_for_RETWEETED.tsv | wc -l
+  902  ls -ltrh
+  903  grep truckertantrum2022 sorted_all_hashtags_for_RETWEETED.tsv | wc -l
+  904  cat INFLUENCE_CLUSTERS_RETWEETS/1003662615661436929
+  905  cd ..
+  906  tmux attach -t a5
+  907  ls -lrth
+  908  cd A5
+  909  ls -ltrh
+  910  rm INFL_UserIDs_3Rgreater.tsv
+  911  vi cache_array_script.sh
+  912  cd ..
+  913  ls -ltrh
+  914  mv A5 A5_bak
+  915  ls -ltrh
+  916  mkdir A5
+  917  cd A5
+  918  ls -ltrh
+  919  cd ..
+  920  cd A5_bak
+  921  ls -ltrh
+  922  mv downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv A5
+  923  rm A5/downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv
+  924  rm -rf A5/downloaded_tweets_extend_original_nolf2_NOBOT_replied_to.tsv
+  925  mv downloaded_tweets_extend_nolf2_NOBOT.tsv A5
+  926  ls -lrX
+  927  cd ..
+  928  ls -lrX
+  929  mv downloaded_tweets_extend_original_nolf2_NOBOT.tsv A5
+  930  rm downloaded_tweets_extend_original_nolf2.tsv
+  931  rm downloaded_tweets_extend_nolf2.tsv
+  932  ls -lrX
+  933  cd A5_bak
+  934  ls -lrX
+  935  mv cache_array_script.sh A5/calculate_relative_freq_script_cache.sh
+  936  cp cache_array_script.sh calculate_relative_freq_script_cache.sh
+  937  mv calculate_relative_freq_script_cache.sh A5
+  938  rm testest
+  939  rm sorted_
+  940  rm sorted
+  941  mv create_clusters_script.sh A5
+  942  ls -lrX
+  943  cd A5
+  944  cd ..
+  945  cd A5
+  946  ls 
+  947  ls -ltrh
+  948  ls -lrX
+  949  cd ..
+  950  ls -lrX
+  951  cd A5
+  952  ls -lrX
+  953  cd ..
+  954  cd A5_bak
+  955  ls -lrX
+  956  cd A5
+  957  cat A5
+  958  mv A5 create_clusters.sh
+  959  ls -lrX
+  960  cp create_clusters.sh A5
+  961  cd ..
+  962  cd A5
+  963  ls -lrX
+  964  mv ../A5_bak/create_clusters.sh .
+  965  ls -lrX
+  966  cd ..
+  967  ls -lrX
+  968  find . -type f -name downloaded_tweets_extend_nolf2_NOBOT.tsv
+  969  cd
+  970  find . -type f -name downloaded_tweets_extend_nolf2_NOBOT.tsv
+  971  cp ./A2/downloaded_tweets_extend_nolf2_NOBOT.tsv vivian/A5
+  972  cd vivian/A5
+  973  ls -lrX
+  974  cd ..
+  975  cd A5_bak
+  976  ls -lrX
+  977  cp cache_array_script.sh A5
+  978  cd ../A5
+  979  ls -lrX
+  980  cp ../A5_bak/cache_array_script.sh .
+  981  ls -lrX
+  982  vi create_clusters.sh 
+  983  ls -lX
+  984  ./create_clusters.sh
+  985  ls INFLUENCE_CLUSTERS_REPLIES
+  986  ls INFLUENCE_CLUSTERS_RETWEETS
+  987  ls -lX
+  988  rm -rf INFLUENCE_CLUSTERS_REPLIES
+  989  mkdir INFLUENCE_CLUSTERS_REPLIES
+  990  rm -rf INFLUENCE_CLUSTERS_RETWEETS
+  991  mkdir INFLUENCE_CLUSTERS_RETWEETS
+  992  ls -lX
+  993  ls INFLUENCE_CLUSTERS_REPLIES
+  994  ./cache_array_script.sh
+  995  ./create_clusters.sh
+  996  ls -lX
+  997  vi create_clusters.sh 
+  998  history | grep downloaded_tweets_extend_original_nolf2_NOBOT_repliedTo.tsv
+  999  rm downloaded_tweets_extend_original_nolf2_NOBOT_replies.tsv
+ 1000  ls
+ 1001  cd vivian
+ 1002  ls
+ 1003  cd A5
+ 1004  ls
+ 1005  nano cache_array_script.sh
+ 1006  git status
+ 1007  ls
+ 1008  mkdir backup
+ 1009  mv calculate_relative_freq_cache_script* backup
+ 1010  mv cache_array_script.sh calculate_relative_freq_cache_script.sh
+ 1011  ls -l
+ 1012  ls
+ 1013  nano create_clusters.sh 
+ 1014  nano calculate_relative_freq_cache_script.sh 
+ 1015  wc -l downloaded_tweets_extend_original_nolf2_NOBOT_repliedTo.tsv
+ 1016  vi create_clusters.sh
+ 1017  cat create_clusters.sh 
+ 1018  vi calculate_relative_freq_cache_script.sh
+ 1019  cat calculate_relative_freq_cache_script.sh
+ 1020  ./calculate_relative_freq_cache_script.sh
+ 1021  ls
+ 1022  sort -nr -k 3 replies_hashtag_freqs.tsv | head -n 20 | column -t
+ 1023  sort -nr -k 3 retweets_hashtag_freqs.tsv | head -n 20 | column -t
+ 1024  awk -F'\t' '$6 > 1' replies_hashtag_freqs.tsv | sort -nr -k 3 | head -n 20 | column -t
+ 1025  history > cmds.log
